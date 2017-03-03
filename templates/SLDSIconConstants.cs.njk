@@ -1,0 +1,15 @@
+namespace Salesforce.SfdcCore.Helpers
+{
+    public class SLDSIconConstants
+    {
+        {% for type, iconSet in icons %}
+        /// <summary>
+        /// List of {{type | capitalize}} icons in SalesforceDesignSystemIcons.ttf
+        /// </summary>
+        public class SLDSIcon{{type | capitalize}}
+        { {% for icon in iconSet %}
+            public const string {{icon.name}} = "\u{{icon.unicode}}";{% endfor %}
+        } 
+        {% endfor %}
+    }
+}     
