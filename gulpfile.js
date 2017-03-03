@@ -57,15 +57,6 @@ let iconTypes = [
 ];
 */
 
-const parseColor = (c) => {
-  // let splits = c.replace('rgba(','').replace('rgb(','').replace(')','').split(',');
-  // let r = Math.round(parseFloat(splits[0]/255)*100)/100;
-  // let g = Math.round(parseFloat(splits[1]/255)*100)/100;
-  // let b = Math.round(parseFloat(splits[2]/255)*100)/100;
-
-  return tinycolor(c).toHex8String()
-};
-
 const format = (s) => s[0].toUpperCase() + _.camelCase(s.substring(1));
 
 const parseDesignTokens = () =>
@@ -83,7 +74,7 @@ const parseDesignTokens = () =>
         if (!data[t].hasOwnProperty(format(p.category))) data[t][format(p.category)] = []
         data[t][format(p.category)].push({
           'name' : _.snakeCase(p.name).toUpperCase(),
-          'value' : p.type === 'color' ? parseColor(p.value) : p.value
+          'value' : p.type === 'color' ? tinycolor(p.value).toHex8String().toUpperCase() : p.value
         });
       }
     });
@@ -98,9 +89,15 @@ gulp.task('template:design-tokens', () => {
       let updatedType = type === 'FontSize' ? 'Font' : type
 
       streams.push(
-        gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.ms.xaml.njk')
+        gulp.src('templates/SLDSBrushes.ms.xaml.njk')
           .pipe(nunjucks.compile({ 'data': data[type] }))
-          .pipe(rename('SLDS' + updatedType + '.ms.xaml'))
+          .pipe(rename('SLDSBrushes.ms.xaml'))
+      );
+
+      streams.push(
+        gulp.src('templates/SLDSTokens.ms.xaml.njk')
+          .pipe(nunjucks.compile({ 'data': data[type] }))
+          .pipe(rename('SLDSTokens.ms.xaml'))
       );
 
       // streams.push(
