@@ -36,9 +36,9 @@ let data = {};
 let iconNames = [];
 
 let types = [
-  'color'//,
-  //'size',
-  //'font-size'
+  'color',
+  'size',
+  'font-size'
 ];
 /*
 let iconTypes = [
@@ -59,22 +59,33 @@ let iconTypes = [
 
 const format = (s) => s[0].toUpperCase() + _.camelCase(s.substring(1));
 
+const parseColor = (c) => {
+  let str = tinycolor(c).toHex8().toUpperCase();
+  let alpha = str.substr(6);
+  return '#' + alpha + str.substr(0,6);
+};
+
 const parseDesignTokens = () =>
   through.obj((file, enc, next) => {
     let tokens = JSON.parse(file.contents.toString('utf-8'));
+
+    console.log(tokens)
 
     types.forEach(t => {
       data[format(t)] = {};
     });
 
+
+
     tokens.properties.forEach(p => {
+      if (p.type == 'font-size') p.type = 'size';
       let t = format(p.type)
       if (types.indexOf(p.type) !== -1) {
 
         if (!data[t].hasOwnProperty(format(p.category))) data[t][format(p.category)] = []
         data[t][format(p.category)].push({
           'name' : _.snakeCase(p.name).toUpperCase(),
-          'value' : p.type === 'color' ? tinycolor(p.value).toHex8String().toUpperCase() : p.value
+          'value' : p.type === 'color' ? parseColor(p.value) : p.value
         });
       }
     });
@@ -84,41 +95,17 @@ const parseDesignTokens = () =>
 gulp.task('template:design-tokens', () => {
   let streams = [];
 
-  for (let type in data) {
-    if (data.hasOwnProperty(type)) {
-      let updatedType = type === 'FontSize' ? 'Font' : type
+  streams.push(
+    gulp.src('templates/SLDSBrushes.ms.xaml.njk')
+      .pipe(nunjucks.compile({ 'data': data }))
+      .pipe(rename('SLDSBrushes.ms.xaml'))
+  );
 
-      streams.push(
-        gulp.src('templates/SLDSBrushes.ms.xaml.njk')
-          .pipe(nunjucks.compile({ 'data': data[type] }))
-          .pipe(rename('SLDSBrushes.ms.xaml'))
-      );
-
-      streams.push(
-        gulp.src('templates/SLDSTokens.ms.xaml.njk')
-          .pipe(nunjucks.compile({ 'data': data[type] }))
-          .pipe(rename('SLDSTokens.ms.xaml'))
-      );
-
-      // streams.push(
-      //   gulp.src('templates/' + updatedType + '/UI' + updatedType + '.m.njk')
-      //     .pipe(nunjucks.compile({ 'data': data[type] }))
-      //     .pipe(rename('Extensions/UI' + updatedType + '+SLDS' + updatedType + '.m'))
-      // );
-
-      // streams.push(
-      //   gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.h.njk')
-      //     .pipe(nunjucks.compile({ 'data': data[type] }))
-      //     .pipe(rename('SLDS' + updatedType + '.h'))
-      // );
-
-      // streams.push(
-      //   gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.m.njk')
-      //     .pipe(nunjucks.compile({ 'data': data[type] }))
-      //     .pipe(rename('SLDS' + updatedType + '.m'))
-      // );
-    }
-  }
+  streams.push(
+    gulp.src('templates/SLDSTokens.ms.xaml.njk')
+      .pipe(nunjucks.compile({ 'data': data }))
+      .pipe(rename('SLDSTokens.ms.xaml'))
+  );
 
   return merge2(streams).pipe(gulp.dest(__PATHS__.output))
 });
