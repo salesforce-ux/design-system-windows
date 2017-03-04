@@ -361,5 +361,38 @@
 	<x:Double x:Key="SLDS_BORDER_RADIUS_CIRCLE">0.5</x:Double>
 	
 
-
+<!-- Thickness -->
+ 
+	<Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_RIGHT">0,0,1,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_LEFT_RIGHT">1,0,1,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_LEFT">1,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_TOP_BOTTOM">0,1,0,1</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_BOTTOM">0,0,0,1</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_ALL">1,1,1,1</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_TOP">0,1,0,0</Thickness>
+     
+	<Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_RIGHT">0,0,2,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_LEFT_RIGHT">2,0,2,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_LEFT">2,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_TOP_BOTTOM">0,2,0,2</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_BOTTOM">0,0,0,2</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_ALL">2,2,2,2</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_TOP">0,2,0,0</Thickness>
+     
+	<Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_RIGHT">0,0,1,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_LEFT_RIGHT">1,0,1,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_LEFT">1,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_TOP_BOTTOM">0,1,0,1</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_BOTTOM">0,0,0,1</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_ALL">1,1,1,1</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_TOP">0,1,0,0</Thickness>
+     
+	<Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_RIGHT">0,0,2,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_LEFT_RIGHT">2,0,2,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_LEFT">2,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_TOP_BOTTOM">0,2,0,2</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_BOTTOM">0,0,0,2</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_ALL">2,2,2,2</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_TOP">0,2,0,0</Thickness>
+    
 </ResourceDictionary>

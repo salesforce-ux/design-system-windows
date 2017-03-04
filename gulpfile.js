@@ -40,7 +40,7 @@ let types = [
   'size',
   'font-size'
 ];
-/*
+
 let iconTypes = [
   {
     'name': 'action',
@@ -55,9 +55,10 @@ let iconTypes = [
     'name': 'utility'
   }
 ];
-*/
 
 const format = (s) => s[0].toUpperCase() + _.camelCase(s.substring(1));
+
+// ------------------------------------------------------------------------------------------------ //
 
 const parseColor = (c) => {
   let str = tinycolor(c).toHex8().toUpperCase();
@@ -65,17 +66,15 @@ const parseColor = (c) => {
   return '#' + alpha + str.substr(0,6);
 };
 
+// ------------------------------------------------------------------------------------------------ //
+
 const parseDesignTokens = () =>
   through.obj((file, enc, next) => {
     let tokens = JSON.parse(file.contents.toString('utf-8'));
 
-    console.log(tokens)
-
     types.forEach(t => {
       data[format(t)] = {};
     });
-
-
 
     tokens.properties.forEach(p => {
       if (p.type == 'font-size') p.type = 'size';
@@ -92,12 +91,18 @@ const parseDesignTokens = () =>
     next(null, file);
   });
 
+// ------------------------------------------------------------------------------------------------ //
+
 gulp.task('template:design-tokens', () => {
   let streams = [];
 
   streams.push(
     gulp.src('templates/SLDSBrushes.ms.xaml.njk')
-      .pipe(nunjucks.compile({ 'data': data }))
+      .pipe(nunjucks.compile({ 
+        'data': data,
+        'icons': icons,
+        'iconTypes':iconTypes
+      }))
       .pipe(rename('SLDSBrushes.ms.xaml'))
   );
 
@@ -113,7 +118,6 @@ gulp.task('template:design-tokens', () => {
 
 // Icons
 // ------------------------------------------------------------------------------------------------
-/*
 let icons = {};
 
 gulp.task('minify:svgs', () => {
@@ -146,6 +150,8 @@ gulp.task('minify:svgs', () => {
   return merge2(streams)
 });
 
+// ------------------------------------------------------------------------------------------------ //
+
 gulp.task('create:icon-fonts', () => {
   let iconPaths = []
 
@@ -165,8 +171,10 @@ gulp.task('create:icon-fonts', () => {
       fontName: 'SalesforceDesignSystemIcons',
       normalize: true
     }))
-    .pipe(gulp.dest('SalesforceDesignSystem.bundle'))
+    .pipe(gulp.dest(__PATHS__.output))
 });
+
+// ------------------------------------------------------------------------------------------------ //
 
 const parseIcons = () =>
   through.obj((file, enc, next) => {
@@ -179,47 +187,51 @@ const parseIcons = () =>
         return iconType.name === 'action' ? 'action' + format(i.replace('.svg','')) : format(i.replace('.svg','')).charAt(0).toLowerCase() + format(i.replace('.svg','')).slice(1);
       });
 
+      var count = 0;
       let tokens = JSON.parse(file.contents.toString('utf-8'));
+      
       names.forEach(n => {
         let backgroundColor = iconType.name === 'utility' ? 'null' : parseColor(_.find(tokens[iconType.name].properties, { 'name': n }).value)
         let name = (iconType.name === 'action' || iconType.name === 'custom') ?  format(n) : format(iconType.name) + format(n)
         iconNames.push(name);
         icons[iconType.name].push({
-          "name" : name ,
-          "backgroundColor" : backgroundColor
+          'name' : name ,
+          'brushName' :  _.snakeCase(name).toUpperCase(),
+          'backgroundColor' : backgroundColor,
+          'unicode' : (59905+count).toString(16).toUpperCase()
         });
+        count++;
       });
     });
       next(null, file);
   });
 
+// ------------------------------------------------------------------------------------------------ //
+
 gulp.task('template:icons', () => {
-
-  let templateSources = [
-    'UIImage.h.njk',
-    'UIImage.m.njk',
-    'SLDSIcon.h.njk'
-  ];
-
-  let streams = templateSources.map(src => {
-    let dest = src.replace('UIImage', 'UIImage+SLDSIcon').replace('.njk', '')
-    dest = src.indexOf('UIImage') === -1 ? dest : 'Extensions/' + dest
-    return gulp.src('templates/Icon/' + src)
-      .pipe(nunjucks.compile({
+  let streams = [];
+  
+  streams.push(
+    gulp.src('templates/SLDSIconConstants.cs.njk')
+    .pipe(nunjucks.compile({ 
         'icons': icons,
         'iconTypes':iconTypes
-      }))
-      .pipe(rename(dest))
-  })
+        }))
+    .pipe(rename('SLDSIconConstants.cs'))
+  );
 
   return merge2(streams).pipe(gulp.dest(__PATHS__.output))
 });
+
+// ------------------------------------------------------------------------------------------------ //
 
 gulp.task('parse:icons', () =>
   gulp.src(path.resolve('./temp/icons.json'))
     .pipe(parseIcons()));
 
 const merge = require('gulp-json-concat');
+
+// ------------------------------------------------------------------------------------------------ //
 
 gulp.task('merge:icon-tokens', () => {
   let basePath = path.resolve(__PATHS__.iconTokens)
@@ -241,7 +253,6 @@ gulp.task('merge:icon-tokens', () => {
       .pipe(jsonFormat(2))
       .pipe(gulp.dest('./temp'))
 });
-*/
 
 // Names
 // ------------------------------------------------------------------------------------------------ //
@@ -279,13 +290,9 @@ gulp.task('parse:design-tokens', () =>
     .pipe(parseDesignTokens()));
 
 gulp.task('default', () => {
-  runSequence('parse:design-tokens', 'template:design-tokens')
+  runSequence('parse:design-tokens', 'minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:design-tokens', 'template:icons', 'remove:temp')
 });
 
 gulp.task('remove:temp', () => del(__PATHS__.temp, {force:true}));
 
 gulp.task('clean', () => del([__PATHS__.output, __PATHS__.temp], {force:true}));
-
-gulp.task('icons', () => {
-  runSequence('minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:icons', 'template:names', 'remove:temp')
-});
