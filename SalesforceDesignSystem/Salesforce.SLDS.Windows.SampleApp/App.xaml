@@ -1,0 +1,32 @@
+﻿<Application
+    x:Class="Salesforce.SLDS.Windows.SampleApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Salesforce.SLDS.Windows.SampleApp"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/SLDS/SLDSTokens.ms.xaml" />
+                <ResourceDictionary Source="Styles/SLDS/SLDSBrushes.ms.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <FontFamily x:Key="SalesforceDefaultFontFamily">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceSans-Regular.ttf#Salesforce Sans</FontFamily>
+            <FontFamily x:Key="SalesforceLightFontFamily">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceSans-Light.ttf#Salesforce Sans Light</FontFamily>
+            <FontFamily x:Key="SalesforceDesignSystemIconsAction">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIconsAction.ttf#SalesforceDesignSystemIconsAction</FontFamily>
+            <FontFamily x:Key="SalesforceDesignSystemIconsCustom">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIconsCustom.ttf#SalesforceDesignSystemIconsCustom</FontFamily>
+            <FontFamily x:Key="SalesforceDesignSystemIconsStandard">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIconsStandard.ttf#SalesforceDesignSystemIconsStandard</FontFamily>
+            <FontFamily x:Key="SalesforceDesignSystemIconsUtility">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIconsUtility.ttf#SalesforceDesignSystemIconsUtility</FontFamily>
+
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource SalesforceDefaultFontFamily}" />
+                <Setter Property="Foreground"
+                    Value="{ThemeResource SLDS_COLOR_TEXT_DEFAULT_BRUSH}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>
