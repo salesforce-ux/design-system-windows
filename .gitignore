@@ -4,6 +4,8 @@
 node_modules/
 npm-debug.log
 
+project.lock.json
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
