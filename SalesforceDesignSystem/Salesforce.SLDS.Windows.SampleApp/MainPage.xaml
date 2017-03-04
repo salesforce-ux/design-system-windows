@@ -19,16 +19,15 @@
             <Button x:Name="Fonts" Content="Font Color" Click="Fonts_OnClick"  Margin="{StaticResource ButtonBorderThemeThickness}"/>
             <Button x:Name="Icons" Content="Icons" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
             <StackPanel x:Name="MoreIcons" Visibility="Collapsed">
-                <Button x:Name="SalesforceDesignSystemIconsAction" Content="IconsAction" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
-                <Button x:Name="SalesforceDesignSystemIconsCustom" Content="IconsCustom" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
-                <Button x:Name="SalesforceDesignSystemIconsStandard" Content="IconsStandard" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
-                <Button x:Name="SalesforceDesignSystemIconsUtility" Content="IconsUtility" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="SLDSIconAction" Content="IconsAction" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="SLDSIconCustom" Content="IconsCustom" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="SLDSIconStandard" Content="IconsStandard" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="SLDSIconUtility" Content="IconsUtility" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
             </StackPanel>
         </StackPanel>
 
-        <ListView Name="DisplayList" Grid.Column="1">
+        <ListView Name="DisplayList" Grid.Column="1"/>
 
-        </ListView>
     </Grid>
 
 

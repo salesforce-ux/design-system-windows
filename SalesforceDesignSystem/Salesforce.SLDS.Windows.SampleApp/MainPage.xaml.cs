@@ -19,8 +19,6 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 using Salesforce.SfdcCore.Helpers;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace Salesforce.SLDS.Windows.SampleApp
 {
     /// <summary>
@@ -83,21 +81,20 @@ namespace Salesforce.SLDS.Windows.SampleApp
         {
             DisplayList.Items.Clear();
             var iconsButton = (sender as Button).Name;
-            IEnumerable<FieldInfo> icons = null;
             Type targetType = null;
 
             switch (iconsButton)
             {
-                case "SalesforceDesignSystemIconsAction":
+                case "SLDSIconAction":
                     targetType = typeof(SLDSIconConstants.SLDSIconAction);
                     break;
-                case "SalesforceDesignSystemIconsCustom":
+                case "SLDSIconCustom":
                     targetType = typeof(SLDSIconConstants.SLDSIconCustom);
                     break;
-                case "SalesforceDesignSystemIconsStandard":
+                case "SLDSIconStandard":
                     targetType = typeof(SLDSIconConstants.SLDSIconStandard);
                     break;
-                case "SalesforceDesignSystemIconsUtility":
+                case "SLDSIconUtility":
                     targetType = typeof(SLDSIconConstants.SLDSIconUtility);
                     break;
                 case "Icons":
@@ -113,13 +110,10 @@ namespace Salesforce.SLDS.Windows.SampleApp
                     Height = 80,
                 };
 
-                var text = (icon.GetValue(targetType) as string) ?? string.Empty;
-                var fontFamily = (FontFamily) Application.Current.Resources[iconsButton];
-
                 var textblock = new TextBlock()
                 {
-                    Text = text,
-                    FontFamily = fontFamily
+                    Text = (icon.GetValue(targetType) as string) ?? string.Empty,
+                    FontFamily = (FontFamily)Application.Current.Resources["SalesforceDesignSystemIcons"]
                 };
 
                 grid.Children.Add(textblock);

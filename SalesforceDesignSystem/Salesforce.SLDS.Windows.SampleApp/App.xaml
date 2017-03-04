@@ -13,19 +13,8 @@
                 <ResourceDictionary Source="Styles/SLDS/SLDSBrushes.ms.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <FontFamily x:Key="SalesforceDefaultFontFamily">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceSans-Regular.ttf#Salesforce Sans</FontFamily>
-            <FontFamily x:Key="SalesforceLightFontFamily">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceSans-Light.ttf#Salesforce Sans Light</FontFamily>
-            <FontFamily x:Key="SalesforceDesignSystemIconsAction">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIconsAction.ttf#SalesforceDesignSystemIconsAction</FontFamily>
-            <FontFamily x:Key="SalesforceDesignSystemIconsCustom">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIconsCustom.ttf#SalesforceDesignSystemIconsCustom</FontFamily>
-            <FontFamily x:Key="SalesforceDesignSystemIconsStandard">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIconsStandard.ttf#SalesforceDesignSystemIconsStandard</FontFamily>
-            <FontFamily x:Key="SalesforceDesignSystemIconsUtility">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIconsUtility.ttf#SalesforceDesignSystemIconsUtility</FontFamily>
+            <FontFamily x:Key="SalesforceDesignSystemIcons">ms-appx:///Salesforce.SLDS.Windows.SampleApp/Assets/Fonts/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons</FontFamily>
 
-            <Style TargetType="TextBlock">
-                <Setter Property="FontFamily"
-                    Value="{StaticResource SalesforceDefaultFontFamily}" />
-                <Setter Property="Foreground"
-                    Value="{ThemeResource SLDS_COLOR_TEXT_DEFAULT_BRUSH}" />
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 

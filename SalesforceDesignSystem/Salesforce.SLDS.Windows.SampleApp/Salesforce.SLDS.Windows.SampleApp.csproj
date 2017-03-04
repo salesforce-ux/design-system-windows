@@ -17,6 +17,12 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Salesforce.SLDS.Windows.SampleApp_TemporaryKey.pfx</PackageCertificateKeyFile>
+	<AppxBundlePlatforms>$(Platform)</AppxBundlePlatforms>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <OutputPath>$(SolutionDir)Output\bin\product\$(AssemblyName)\$(Platform)\$(Configuration)</OutputPath>
+    <IntermediateOutputPath>$(SolutionDir)Output\obj\product\$(AssemblyName)\$(Platform)\$(Configuration)</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -36,29 +42,6 @@
     <NoWarn>;2008</NoWarn>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\ARM\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>ARM</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
-    <OutputPath>bin\ARM\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>ARM</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
@@ -89,17 +72,16 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Content Include="Assets\Fonts\SalesforceDesignSystemIconsAction.ttf" />
-    <Content Include="Assets\Fonts\SalesforceDesignSystemIconsCustom.ttf" />
-    <Content Include="Assets\Fonts\SalesforceDesignSystemIconsStandard.ttf" />
-    <Content Include="Assets\Fonts\SalesforceDesignSystemIconsUtility.ttf" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+	 <Compile Include="..\Generated\SLDSIconConstants.cs">
+      <Link>Helpers\SLDSIconConstants.cs</Link>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\SLDSIconConstants.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -112,6 +94,10 @@
     <None Include="Salesforce.SLDS.Windows.SampleApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Generated\SalesforceDesignSystemIcons.ttf">
+	  <Link>Assets\Fonts\SalesforceDesignSystemIcons.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -130,13 +116,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\SLDS\SLDSBrushes.ms.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
+	<Page Include="..\Generated\SLDSBrushes.ms.xaml">
+      <Link>Styles\SLDS\SLDSBrushes.ms.xaml</Link>
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\SLDS\SLDSTokens.ms.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
+    <Page Include="..\Generated\SLDSTokens.ms.xaml">
+      <Link>Styles\SLDS\SLDSTokens.ms.xaml</Link>
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup />
