@@ -98,7 +98,11 @@ gulp.task('template:design-tokens', () => {
 
   streams.push(
     gulp.src('templates/SLDSBrushes.ms.xaml.njk')
-      .pipe(nunjucks.compile({ 'data': data }))
+      .pipe(nunjucks.compile({ 
+        'data': data,
+        'icons': icons,
+        'iconTypes':iconTypes
+      }))
       .pipe(rename('SLDSBrushes.ms.xaml'))
   );
 
@@ -167,7 +171,7 @@ gulp.task('create:icon-fonts', () => {
       fontName: 'SalesforceDesignSystemIcons',
       normalize: true
     }))
-    .pipe(gulp.dest('SalesforceDesignSystem.bundle'))
+    .pipe(gulp.dest(__PATHS__.output))
 });
 
 // ------------------------------------------------------------------------------------------------ //
@@ -192,6 +196,7 @@ const parseIcons = () =>
         iconNames.push(name);
         icons[iconType.name].push({
           'name' : name ,
+          'brushName' :  _.snakeCase(name).toUpperCase(),
           'backgroundColor' : backgroundColor,
           'unicode' : (59905+count).toString(16).toUpperCase()
         });
@@ -285,13 +290,9 @@ gulp.task('parse:design-tokens', () =>
     .pipe(parseDesignTokens()));
 
 gulp.task('default', () => {
-  runSequence('parse:design-tokens', 'template:design-tokens', 'icons')
+  runSequence('parse:design-tokens', 'minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:design-tokens', 'template:icons', 'remove:temp')
 });
 
 gulp.task('remove:temp', () => del(__PATHS__.temp, {force:true}));
 
 gulp.task('clean', () => del([__PATHS__.output, __PATHS__.temp], {force:true}));
-
-gulp.task('icons', () => {
-  runSequence('minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:icons', 'remove:temp')
-});
