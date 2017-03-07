@@ -1,22 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI;
+using System.Text.RegularExpressions;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Windows.UI.Xaml.Shapes;
 using Salesforce.SfdcCore.Helpers;
 
 namespace Salesforce.SLDS.Windows.SampleApp
@@ -105,21 +93,33 @@ namespace Salesforce.SLDS.Windows.SampleApp
 
             foreach (var icon in targetType.GetTypeInfo().DeclaredFields)
             {
-                var grid = new Grid()
+                var panel = new StackPanel()
                 {
-                    Height = 80,
+                    Height = 50,
+                    Orientation = Orientation.Horizontal
                 };
 
-                var textblock = new TextBlock()
+                //var x = Application.Current.Resources["SalesforceDesignSystemIcons"];
+
+                var code = (icon.GetValue(targetType) as string) ?? string.Empty;
+                var iconBlock = new TextBlock()
                 {
-                    Text = (icon.GetValue(targetType) as string) ?? string.Empty,
-                    FontFamily = (FontFamily)Application.Current.Resources["SalesforceDesignSystemIcons"]
+                    Text = code,
+                    FontFamily = new FontFamily("/Assets/Fonts/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons"),
+                    FontSize = 34
                 };
 
-                grid.Children.Add(textblock);
+                var descriptionBlock = new TextBlock()
+                {
+                    Text = $"   {icon.Name} = ({Regex.Replace(code, @"[^\x00-\x7F]", c => string.Format(@"\u{0:x4}", (int)c.Value[0]))})"
+                };
 
-                DisplayList.Items.Add(grid);
+                panel.Children.Add(iconBlock);
+                panel.Children.Add(descriptionBlock);
+
+                DisplayList.Items.Add(panel);
             }
         }
+
     }
 }
