@@ -2,7 +2,7 @@
 <!-- Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license -->
 
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 <!-- Colors -->
 <!-- Fill -->
 	<Color x:Key="SLDS_FILL_BRAND">#FF0070D2</Color>
