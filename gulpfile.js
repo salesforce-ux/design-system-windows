@@ -195,6 +195,7 @@ gulp.task('create:icon-fonts', () => {
 
 const parseIcons = () =>
   through.obj((file, enc, next) => {
+    var count = 0;
     iconTypes.forEach(iconType => {
       icons[iconType.name] = [];
 
@@ -204,7 +205,6 @@ const parseIcons = () =>
         return iconType.name === 'action' ? 'action' + format(i.replace('.svg','')) : format(i.replace('.svg','')).charAt(0).toLowerCase() + format(i.replace('.svg','')).slice(1);
       });
 
-      var count = 0;
       let tokens = JSON.parse(file.contents.toString('utf-8'));
       
       names.forEach(n => {
