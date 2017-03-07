@@ -41,6 +41,16 @@ let types = [
   'font-size'
 ];
 
+let thicknessExceptions = [
+'bar',,
+'font',
+'icon',
+'path',
+'pill',
+'radius',
+'toggle',
+]
+
 let iconTypes = [
   {
     'name': 'action',
@@ -80,10 +90,17 @@ const parseDesignTokens = () =>
       if (p.type == 'font-size') p.type = 'size';
       let t = format(p.type)
       if (types.indexOf(p.type) !== -1) {
-
         if (!data[t].hasOwnProperty(format(p.category))) data[t][format(p.category)] = []
+        
+        var expand = true
+        thicknessExceptions.forEach( value => {
+          if (p.name.toLowerCase().includes(value))
+            expand = false;
+        });
+
         data[t][format(p.category)].push({
           'name' : _.snakeCase(p.name).toUpperCase(),
+          'expand' : expand,
           'value' : p.type === 'color' ? parseColor(p.value) : p.value
         });
       }
