@@ -2,8 +2,8 @@
 <!-- Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license -->
 
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Colors -->
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<!-- Colors -->
 <!-- Fill -->
 	<Color x:Key="SLDS_FILL_BRAND">#FF0070D2</Color>
 	<Color x:Key="SLDS_FILL_BRAND_HOVER">#FF005FB2</Color>
@@ -362,128 +362,198 @@
 	
 
 <!-- Thickness -->
+
  
 	<Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_RIGHT">0,0,1,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_LEFT_RIGHT">1,0,1,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_LEFT">1,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_TOP">0,1,0,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_TOP_BOTTOM">0,1,0,1</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_BOTTOM">0,0,0,1</Thickness>
-    <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_TOP">0,1,0,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THIN_THICKNESS_ALL">1,1,1,1</Thickness>
-    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_RIGHT">0,0,2,0</Thickness>
+     
+	<Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_RIGHT">0,0,2,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_LEFT_RIGHT">2,0,2,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_LEFT">2,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_TOP">0,2,0,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_TOP_BOTTOM">0,2,0,2</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_BOTTOM">0,0,0,2</Thickness>
-    <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_TOP">0,2,0,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_WIDTH_THICK_THICKNESS_ALL">2,2,2,2</Thickness>
-    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_RIGHT">0,0,1,0</Thickness>
+     
+	<Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_RIGHT">0,0,1,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_LEFT_RIGHT">1,0,1,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_LEFT">1,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_TOP">0,1,0,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_TOP_BOTTOM">0,1,0,1</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_BOTTOM">0,0,0,1</Thickness>
-    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_TOP">0,1,0,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THIN_THICKNESS_ALL">1,1,1,1</Thickness>
-    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_RIGHT">0,0,2,0</Thickness>
+     
+	<Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_RIGHT">0,0,2,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_LEFT_RIGHT">2,0,2,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_LEFT">2,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_TOP">0,2,0,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_TOP_BOTTOM">0,2,0,2</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_BOTTOM">0,0,0,2</Thickness>
-    <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_TOP">0,2,0,0</Thickness>
     <Thickness x:Key="SLDS_BORDER_STROKE_WIDTH_THICK_THICKNESS_ALL">2,2,2,2</Thickness>
-    <Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_RIGHT">0,0,0,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_RIGHT">0,0,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_LEFT_RIGHT">0,0,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_LEFT">0,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_TOP">0,0,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_TOP_BOTTOM">0,0,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_BOTTOM">0,0,0,0</Thickness>
-    <Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_TOP">0,0,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_NONE_THICKNESS_ALL">0,0,0,0</Thickness>
-    <Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_RIGHT">0,0,2,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_RIGHT">0,0,2,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_LEFT_RIGHT">2,0,2,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_LEFT">2,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_TOP">0,2,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_TOP_BOTTOM">0,2,0,2</Thickness>
     <Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_BOTTOM">0,0,0,2</Thickness>
-    <Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_TOP">0,2,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XXX_SMALL_THICKNESS_ALL">2,2,2,2</Thickness>
-    <Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_RIGHT">0,0,4,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_RIGHT">0,0,4,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_LEFT_RIGHT">4,0,4,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_LEFT">4,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_TOP">0,4,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_TOP_BOTTOM">0,4,0,4</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_BOTTOM">0,0,0,4</Thickness>
-    <Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_TOP">0,4,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_SMALL_THICKNESS_ALL">4,4,4,4</Thickness>
-    <Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_RIGHT">0,0,8,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_RIGHT">0,0,8,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_LEFT_RIGHT">8,0,8,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_LEFT">8,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_TOP">0,8,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_TOP_BOTTOM">0,8,0,8</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_BOTTOM">0,0,0,8</Thickness>
-    <Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_TOP">0,8,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_SMALL_THICKNESS_ALL">8,8,8,8</Thickness>
-    <Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_RIGHT">0,0,12,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_RIGHT">0,0,12,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_LEFT_RIGHT">12,0,12,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_LEFT">12,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_TOP">0,12,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_TOP_BOTTOM">0,12,0,12</Thickness>
     <Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_BOTTOM">0,0,0,12</Thickness>
-    <Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_TOP">0,12,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_SMALL_THICKNESS_ALL">12,12,12,12</Thickness>
-    <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_RIGHT">0,0,16,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_RIGHT">0,0,16,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_LEFT_RIGHT">16,0,16,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_LEFT">16,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_TOP">0,16,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_TOP_BOTTOM">0,16,0,16</Thickness>
     <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_BOTTOM">0,0,0,16</Thickness>
-    <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_TOP">0,16,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_ALL">16,16,16,16</Thickness>
-    <Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_RIGHT">0,0,24,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_RIGHT">0,0,24,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_LEFT_RIGHT">24,0,24,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_LEFT">24,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_TOP">0,24,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_TOP_BOTTOM">0,24,0,24</Thickness>
     <Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_BOTTOM">0,0,0,24</Thickness>
-    <Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_TOP">0,24,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_LARGE_THICKNESS_ALL">24,24,24,24</Thickness>
-    <Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_RIGHT">0,0,32,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_RIGHT">0,0,32,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_LEFT_RIGHT">32,0,32,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_LEFT">32,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_TOP">0,32,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_TOP_BOTTOM">0,32,0,32</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_BOTTOM">0,0,0,32</Thickness>
-    <Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_TOP">0,32,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_X_LARGE_THICKNESS_ALL">32,32,32,32</Thickness>
-    <Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_RIGHT">0,0,48,0</Thickness>
+     
+	<Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_RIGHT">0,0,48,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_LEFT_RIGHT">48,0,48,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_LEFT">48,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_TOP">0,48,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_TOP_BOTTOM">0,48,0,48</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_BOTTOM">0,0,0,48</Thickness>
-    <Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_TOP">0,48,0,0</Thickness>
     <Thickness x:Key="SLDS_SPACING_XX_LARGE_THICKNESS_ALL">48,48,48,48</Thickness>
-    <Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_RIGHT">0,0,12,0</Thickness>
+     
+	<Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_RIGHT">0,0,12,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_LEFT_RIGHT">12,0,12,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_LEFT">12,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_TOP">0,12,0,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_TOP_BOTTOM">0,12,0,12</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_BOTTOM">0,0,0,12</Thickness>
-    <Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_TOP">0,12,0,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_SMALL_THICKNESS_ALL">12,12,12,12</Thickness>
-    <Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_RIGHT">0,0,16,0</Thickness>
+     
+	<Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_RIGHT">0,0,16,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_LEFT_RIGHT">16,0,16,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_LEFT">16,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_TOP">0,16,0,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_TOP_BOTTOM">0,16,0,16</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_BOTTOM">0,0,0,16</Thickness>
-    <Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_TOP">0,16,0,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_MEDIUM_THICKNESS_ALL">16,16,16,16</Thickness>
-    <Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_RIGHT">0,0,24,0</Thickness>
+     
+	<Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_RIGHT">0,0,24,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_LEFT_RIGHT">24,0,24,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_LEFT">24,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_TOP">0,24,0,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_TOP_BOTTOM">0,24,0,24</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_BOTTOM">0,0,0,24</Thickness>
-    <Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_TOP">0,24,0,0</Thickness>
     <Thickness x:Key="SLDS_CARD_SPACING_LARGE_THICKNESS_ALL">24,24,24,24</Thickness>
-    <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_RIGHT">0,0,8,0</Thickness>
+     
+	<Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_RIGHT">0,0,8,0</Thickness>
     <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_LEFT_RIGHT">8,0,8,0</Thickness>
     <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_LEFT">8,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_TOP">0,8,0,0</Thickness>
     <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_TOP_BOTTOM">0,8,0,8</Thickness>
     <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_BOTTOM">0,0,0,8</Thickness>
-    <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_TOP">0,8,0,0</Thickness>
     <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_ALL">8,8,8,8</Thickness>
-    <!-- Manually Added -->
-    <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_TOPBOTTOM_SMALL_LEFTRIGHT">12,16,12,16</Thickness>
-    <Thickness x:Key="SLDS_SPACING_MEDIUM_NONE_MEDIUM_LARGE">16, 0, 16, 24</Thickness>
-    <Thickness x:Key="SLDS_SPACING_NONE_MEDIUM_NONE_LARGE">0,16,0,24</Thickness>
+     
+	<Thickness x:Key="SLDS_SIZE_XX_SMALL_THICKNESS_RIGHT">0,0,96,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_SMALL_THICKNESS_LEFT_RIGHT">96,0,96,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_SMALL_THICKNESS_LEFT">96,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_SMALL_THICKNESS_TOP">0,96,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_SMALL_THICKNESS_TOP_BOTTOM">0,96,0,96</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_SMALL_THICKNESS_BOTTOM">0,0,0,96</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_SMALL_THICKNESS_ALL">96,96,96,96</Thickness>
+     
+	<Thickness x:Key="SLDS_SIZE_X_SMALL_THICKNESS_RIGHT">0,0,192,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_SMALL_THICKNESS_LEFT_RIGHT">192,0,192,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_SMALL_THICKNESS_LEFT">192,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_SMALL_THICKNESS_TOP">0,192,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_SMALL_THICKNESS_TOP_BOTTOM">0,192,0,192</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_SMALL_THICKNESS_BOTTOM">0,0,0,192</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_SMALL_THICKNESS_ALL">192,192,192,192</Thickness>
+     
+	<Thickness x:Key="SLDS_SIZE_SMALL_THICKNESS_RIGHT">0,0,240,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_SMALL_THICKNESS_LEFT_RIGHT">240,0,240,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_SMALL_THICKNESS_LEFT">240,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_SMALL_THICKNESS_TOP">0,240,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_SMALL_THICKNESS_TOP_BOTTOM">0,240,0,240</Thickness>
+    <Thickness x:Key="SLDS_SIZE_SMALL_THICKNESS_BOTTOM">0,0,0,240</Thickness>
+    <Thickness x:Key="SLDS_SIZE_SMALL_THICKNESS_ALL">240,240,240,240</Thickness>
+     
+	<Thickness x:Key="SLDS_SIZE_MEDIUM_THICKNESS_RIGHT">0,0,320,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_MEDIUM_THICKNESS_LEFT_RIGHT">320,0,320,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_MEDIUM_THICKNESS_LEFT">320,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_MEDIUM_THICKNESS_TOP">0,320,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_MEDIUM_THICKNESS_TOP_BOTTOM">0,320,0,320</Thickness>
+    <Thickness x:Key="SLDS_SIZE_MEDIUM_THICKNESS_BOTTOM">0,0,0,320</Thickness>
+    <Thickness x:Key="SLDS_SIZE_MEDIUM_THICKNESS_ALL">320,320,320,320</Thickness>
+     
+	<Thickness x:Key="SLDS_SIZE_LARGE_THICKNESS_RIGHT">0,0,400,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_LARGE_THICKNESS_LEFT_RIGHT">400,0,400,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_LARGE_THICKNESS_LEFT">400,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_LARGE_THICKNESS_TOP">0,400,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_LARGE_THICKNESS_TOP_BOTTOM">0,400,0,400</Thickness>
+    <Thickness x:Key="SLDS_SIZE_LARGE_THICKNESS_BOTTOM">0,0,0,400</Thickness>
+    <Thickness x:Key="SLDS_SIZE_LARGE_THICKNESS_ALL">400,400,400,400</Thickness>
+     
+	<Thickness x:Key="SLDS_SIZE_X_LARGE_THICKNESS_RIGHT">0,0,640,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_LARGE_THICKNESS_LEFT_RIGHT">640,0,640,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_LARGE_THICKNESS_LEFT">640,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_LARGE_THICKNESS_TOP">0,640,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_LARGE_THICKNESS_TOP_BOTTOM">0,640,0,640</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_LARGE_THICKNESS_BOTTOM">0,0,0,640</Thickness>
+    <Thickness x:Key="SLDS_SIZE_X_LARGE_THICKNESS_ALL">640,640,640,640</Thickness>
+     
+	<Thickness x:Key="SLDS_SIZE_XX_LARGE_THICKNESS_RIGHT">0,0,960,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_LARGE_THICKNESS_LEFT_RIGHT">960,0,960,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_LARGE_THICKNESS_LEFT">960,0,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_LARGE_THICKNESS_TOP">0,960,0,0</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_LARGE_THICKNESS_TOP_BOTTOM">0,960,0,960</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_LARGE_THICKNESS_BOTTOM">0,0,0,960</Thickness>
+    <Thickness x:Key="SLDS_SIZE_XX_LARGE_THICKNESS_ALL">960,960,960,960</Thickness>
+    
 </ResourceDictionary>
