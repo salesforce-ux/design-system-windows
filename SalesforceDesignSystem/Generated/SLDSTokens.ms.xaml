@@ -482,5 +482,8 @@
     <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_BOTTOM">0,0,0,8</Thickness>
     <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_TOP">0,8,0,0</Thickness>
     <Thickness x:Key="SLDS_TABLE_SPACING_X_SMALL_THICKNESS_ALL">8,8,8,8</Thickness>
-    
+    <!-- Manually Added -->
+    <Thickness x:Key="SLDS_SPACING_MEDIUM_THICKNESS_TOPBOTTOM_SMALL_LEFTRIGHT">12,16,12,16</Thickness>
+    <Thickness x:Key="SLDS_SPACING_MEDIUM_NONE_MEDIUM_LARGE">16, 0, 16, 24</Thickness>
+    <Thickness x:Key="SLDS_SPACING_NONE_MEDIUM_NONE_LARGE">0,16,0,24</Thickness>
 </ResourceDictionary>
