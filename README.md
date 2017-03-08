@@ -7,6 +7,10 @@ Current release: Spring ’17
 ## Simple Install
 
 
+## Sample Application 
+
+See [Demo App](https://github.com/salesforce-ux/design-system-windows/tree/master/Salesforce.SLDS.Windows.SampleApp)
+
 ### Examples
 
 
