@@ -17,7 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Salesforce.SLDS.Windows.SampleApp_TemporaryKey.pfx</PackageCertificateKeyFile>
-	<AppxBundlePlatforms>$(Platform)</AppxBundlePlatforms>
+    <AppxBundlePlatforms>$(Platform)</AppxBundlePlatforms>
     <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RunCodeAnalysis>true</RunCodeAnalysis>
@@ -71,13 +71,16 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-	 <Compile Include="..\Generated\SLDSIconConstants.cs">
+    <Compile Include="..\Generated\SLDSIconConstants.cs">
       <Link>Helpers\SLDSIconConstants.cs</Link>
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\Generated\SLDSIconHelpers.cs">
+		<Link>Helpers\SLDSIconHelpers.cs</Link>
+	</Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -91,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Generated\SalesforceDesignSystemIcons.ttf">
-	  <Link>Assets\Fonts\SalesforceDesignSystemIcons.ttf</Link>
+      <Link>Assets\Fonts\SalesforceDesignSystemIcons.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Properties\Default.rd.xml" />
@@ -112,15 +115,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-	<Page Include="..\Generated\SLDSBrushes.ms.xaml">
+    <Page Include="..\Generated\SLDSBrushes.ms.xaml">
       <Link>Styles\SLDS\SLDSBrushes.ms.xaml</Link>
-	  <Generator>MSBuild:Compile</Generator>
-	  <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="..\Generated\SLDSTokens.ms.xaml">
       <Link>Styles\SLDS\SLDSTokens.ms.xaml</Link>
-	  <Generator>MSBuild:Compile</Generator>
-	  <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup />

@@ -99,8 +99,6 @@ namespace Salesforce.SLDS.Windows.SampleApp
                     Orientation = Orientation.Horizontal
                 };
 
-                //var x = Application.Current.Resources["SalesforceDesignSystemIcons"];
-
                 var code = (icon.GetValue(targetType) as string) ?? string.Empty;
                 var iconBlock = new TextBlock()
                 {
@@ -121,5 +119,40 @@ namespace Salesforce.SLDS.Windows.SampleApp
             }
         }
 
+        private void Icons_Color_OnClick(object sender, RoutedEventArgs e)
+        {
+            DisplayList.Items.Clear();
+
+            var fontSizes =
+                Application.Current.Resources.MergedDictionaries.Where(
+                   (x) => x.Source.ToString().Contains("SLDSTokens.ms.xaml")).ToArray()[0].Where(
+                    (token) => token.Key.ToString().Contains("_FONT_SIZE_"));
+
+            var textColorBrushes =
+                Application.Current.Resources.MergedDictionaries.Where(
+                    (x) => x.Source.ToString().Contains("SLDSBrushes.ms.xaml")).ToArray()[0].Where(
+                    (token) => token.Key.ToString().Contains("_TEXT_"));
+
+            foreach (var textColorBrush  in textColorBrushes)
+            {
+                var panel = new StackPanel()
+                {
+                    Height = 50,
+                    Orientation = Orientation.Horizontal
+                };
+
+                var colorBrush = (Brush)Application.Current.Resources[textColorBrush.Key];
+
+                foreach (var fontSize in fontSizes)
+                {
+                    var realFontResource = (Double)Application.Current.Resources[fontSize.Key];
+                    panel.Children.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndSize(
+                        SLDSIconConstants.SLDSIconAction.ActionAddContact, colorBrush, realFontResource));
+                }
+
+                DisplayList.Items.Add(panel);
+            }
+
+        }
     }
 }

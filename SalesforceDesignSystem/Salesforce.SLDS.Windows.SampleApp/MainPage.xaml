@@ -23,7 +23,10 @@
                 <Button x:Name="SLDSIconCustom" Content="IconsCustom" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
                 <Button x:Name="SLDSIconStandard" Content="IconsStandard" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
                 <Button x:Name="SLDSIconUtility" Content="IconsUtility" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="IconSizeAndColor" Content="Size and Color" Click="Icons_Color_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                
             </StackPanel>
+            
         </StackPanel>
 
         <ListView Name="DisplayList" Grid.Column="1"/>
