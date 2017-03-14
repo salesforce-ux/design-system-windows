@@ -71,16 +71,17 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Generated\SLDSIconConstants.cs">
+    <Compile Include="..\SalesforceDesignSystem\Generated\SLDSIconConstants.cs">
       <Link>Helpers\SLDSIconConstants.cs</Link>
+      <DesignTime>True</DesignTime>
+    </Compile>
+	<Compile Include="..\SalesforceDesignSystem\SLDSIconHelpers.cs">
+      <Link>Helpers\SLDSIconHelpers.cs</Link>
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\Generated\SLDSIconHelpers.cs">
-		<Link>Helpers\SLDSIconHelpers.cs</Link>
-	</Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -93,8 +94,40 @@
     <None Include="Salesforce.SLDS.Windows.SampleApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Generated\SalesforceDesignSystemIcons.ttf">
+    <Content Include="..\SalesforceDesignSystem\Generated\SalesforceDesignSystemIcons.ttf">
       <Link>Assets\Fonts\SalesforceDesignSystemIcons.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Bold.ttf">
+      <Link>Assets\Fonts\SalesforceSans-Bold.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-BoldItalic.ttf">
+      <Link>Assets\Fonts\SalesforceSans-BoldItalic.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Italic.ttf">
+      <Link>Assets\Fonts\SalesforceSans-Italic.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Light.ttf">
+      <Link>Assets\Fonts\SalesforceSans-Light.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-LightItalic.ttf">
+      <Link>Assets\Fonts\SalesforceSans-LightItalic.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Regular.ttf">
+      <Link>Assets\Fonts\SalesforceSans-Regular.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Thin.ttf">
+      <Link>Assets\Fonts\SalesforceSans-Thin.ttf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-ThinItalic.ttf">
+      <Link>Assets\Fonts\SalesforceSans-ThinItalic.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Properties\Default.rd.xml" />
@@ -115,12 +148,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\Generated\SLDSBrushes.ms.xaml">
+    <Page Include="..\SalesforceDesignSystem\Generated\SLDSBrushes.ms.xaml">
       <Link>Styles\SLDS\SLDSBrushes.ms.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\Generated\SLDSTokens.ms.xaml">
+    <Page Include="..\SalesforceDesignSystem\Generated\SLDSTokens.ms.xaml">
       <Link>Styles\SLDS\SLDSTokens.ms.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
