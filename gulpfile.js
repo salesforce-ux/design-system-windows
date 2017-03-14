@@ -108,31 +108,6 @@ const parseDesignTokens = () =>
     next(null, file);
   });
 
-// ------------------------------------------------------------------------------------------------ //
-
-gulp.task('template:design-tokens', () => {
-  let streams = [];
-
-  streams.push(
-    gulp.src('templates/SLDSBrushes.ms.xaml.njk')
-      .pipe(nunjucks.compile({ 
-        'data': data,
-        'icons': icons,
-        'iconTypes':iconTypes
-      }))
-      .pipe(rename('SLDSBrushes.ms.xaml'))
-  );
-
-  streams.push(
-    gulp.src('templates/SLDSTokens.ms.xaml.njk')
-      .pipe(nunjucks.compile({ 'data': data }))
-      .pipe(rename('SLDSTokens.ms.xaml'))
-  );
-
-  return merge2(streams).pipe(gulp.dest(__PATHS__.output))
-});
-
-
 // Icons
 // ------------------------------------------------------------------------------------------------
 let icons = {};
@@ -223,11 +198,29 @@ const parseIcons = () =>
       next(null, file);
   });
 
+
+
 // ------------------------------------------------------------------------------------------------ //
 
-gulp.task('template:icons', () => {
+gulp.task('template:design-tokens', () => {
   let streams = [];
-  
+
+  streams.push(
+    gulp.src('templates/SLDSBrushes.ms.xaml.njk')
+      .pipe(nunjucks.compile({ 
+        'data': data,
+        'icons': icons,
+        'iconTypes':iconTypes
+      }))
+      .pipe(rename('SLDSBrushes.ms.xaml'))
+  );
+
+  streams.push(
+    gulp.src('templates/SLDSTokens.ms.xaml.njk')
+      .pipe(nunjucks.compile({ 'data': data }))
+      .pipe(rename('SLDSTokens.ms.xaml'))
+  );
+
   streams.push(
     gulp.src('templates/SLDSIconConstants.cs.njk')
     .pipe(nunjucks.compile({ 
@@ -271,43 +264,14 @@ gulp.task('merge:icon-tokens', () => {
       .pipe(gulp.dest('./temp'))
 });
 
-// Names
 // ------------------------------------------------------------------------------------------------ //
-/*
-gulp.task('template:names', () => {
-
-  let streams = [];
-
-  streams.push(
-    gulp.src('templates/Name/NSString.h.njk')
-      .pipe(nunjucks.compile())
-      .pipe(rename('Extensions/NSString+SLDSName.h'))
-  );
-
-  streams.push(
-    gulp.src('templates/Name/NSString.m.njk')
-      .pipe(nunjucks.compile())
-      .pipe(rename('Extensions/NSString+SLDSName.m'))
-  );
-
-  streams.push(
-    gulp.src('templates/Name/SLDSName.h.njk')
-      .pipe(nunjucks.compile({
-        'tokenNames': data,
-        'iconNames': iconNames}))
-      .pipe(rename('SLDSName.h'))
-  );
-
-  return merge2(streams).pipe(gulp.dest(__PATHS__.output))
-});
-*/
 
 gulp.task('parse:design-tokens', () =>
   gulp.src([path.resolve(__PATHS__.designTokens)])
     .pipe(parseDesignTokens()));
 
 gulp.task('default', () => {
-  runSequence('parse:design-tokens', 'minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:design-tokens', 'template:icons', 'remove:temp')
+  runSequence('parse:design-tokens', 'minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:design-tokens', 'remove:temp')
 });
 
 gulp.task('remove:temp', () => del(__PATHS__.temp, {force:true}));

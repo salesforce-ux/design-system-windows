@@ -23,6 +23,7 @@ namespace Salesforce.SfdcCore.Helpers
             {
                 Text = icon,
                 FontFamily = Font,
+                FontSize = size
             };
 
             return iconBlock;
