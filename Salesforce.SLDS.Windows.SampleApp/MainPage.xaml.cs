@@ -57,14 +57,6 @@ namespace Salesforce.SLDS.Windows.SampleApp
            throw new NotImplementedException();
         }
 
-        private void Fonts_OnClick(object sender, RoutedEventArgs e)
-        {
-            DisplayList.Items.Clear();
-            MoreIcons.Visibility = Visibility.Collapsed;
-
-            throw new NotImplementedException();
-        }
-
         private void Icons_OnClick(object sender, RoutedEventArgs e)
         {
             DisplayList.Items.Clear();
@@ -95,16 +87,19 @@ namespace Salesforce.SLDS.Windows.SampleApp
             {
                 var panel = new StackPanel()
                 {
-                    Height = 50,
+                    Height = 100,
                     Orientation = Orientation.Horizontal
                 };
 
                 var code = (icon.GetValue(targetType) as string) ?? string.Empty;
+
+                //var iconBlock = SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(code, targetType, (Brush) Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush) Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], 100);
+
                 var iconBlock = new TextBlock()
                 {
                     Text = code,
                     FontFamily = new FontFamily("/Assets/Fonts/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons"),
-                    FontSize = 34
+                    FontSize = 100
                 };
 
                 var descriptionBlock = new TextBlock()
@@ -154,5 +149,52 @@ namespace Salesforce.SLDS.Windows.SampleApp
             }
 
         }
+
+        private void Font_OnClick(object sender, RoutedEventArgs e)
+        {
+            DisplayList.Items.Clear();
+            MoreIcons.Visibility = Visibility.Collapsed;
+
+            var fontsButton = (sender as Button).Name;
+
+            if (fontsButton.Equals("Fonts"))
+            {
+                MoreFonts.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                var fontSizes =
+                    Application.Current.Resources.MergedDictionaries.Where(
+                        (x) => x.Source.ToString().Contains("SLDSTokens.ms.xaml")).ToArray()[0].Where(
+                        (token) => token.Key.ToString().Contains("_FONT_SIZE_"));
+
+                var panel = new StackPanel()
+                {
+                    Height = 50,
+                    Orientation = Orientation.Horizontal
+                };
+
+                foreach (var fontSize in fontSizes)
+                {
+                    var size = (Double) Application.Current.Resources[fontSize.Key];
+                    var sampleTextBlock = new TextBlock()
+                    {
+                        Text = SampleText,
+                        FontFamily = new FontFamily($"/Assets/Fonts/Assets/Fonts/SalesforceSans-{fontsButton.Replace("_","")}.ttf#Salesforce Sans {fontsButton.Replace("_"," ")}"),
+                        FontSize = size
+                    };
+
+                    var descriptionBlock = new TextBlock()
+                    {
+                        Text = $" - ({fontSize.Key} = {size})"
+                    };
+
+                    panel.Children.Add(sampleTextBlock);
+                    panel.Children.Add(descriptionBlock);
+                    DisplayList.Items.Add(panel);
+                }
+            }
+        }
+
     }
 }

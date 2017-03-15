@@ -16,7 +16,17 @@
         <StackPanel Grid.Column="0">
             <Button x:Name="Brushes" Content="Brushes" Click="Brushes_OnClick"  Margin="{StaticResource ButtonBorderThemeThickness}"/>
             <Button x:Name="Borders" Content="Borders" Click="Borders_OnClick"  Margin="{StaticResource ButtonBorderThemeThickness}"/>
-            <Button x:Name="Fonts" Content="Font Color" Click="Fonts_OnClick"  Margin="{StaticResource ButtonBorderThemeThickness}"/>
+            <Button x:Name="Fonts" Content="Fonts" Click="Font_OnClick"  Margin="{StaticResource ButtonBorderThemeThickness}"/>
+            <StackPanel x:Name="MoreFonts" Visibility="Collapsed">
+                <Button x:Name="Regular" Content="Regular" Click="Font_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="Bold" Content="Bold" Click="Font_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="Bold_Italic" Content="BoldItalic" Click="Font_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="Italic" Content="Italic" Click="Font_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="Light" Content="Light" Click="Font_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="Light_Italic" Content="LightItalic" Click="Font_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="Thin" Content="Thin" Click="Font_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+                <Button x:Name="Thin_Italic" Content="ThinItalic" Click="Font_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
+            </StackPanel> 
             <Button x:Name="Icons" Content="Icons" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
             <StackPanel x:Name="MoreIcons" Visibility="Collapsed">
                 <Button x:Name="SLDSIconAction" Content="IconsAction" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
@@ -24,7 +34,6 @@
                 <Button x:Name="SLDSIconStandard" Content="IconsStandard" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
                 <Button x:Name="SLDSIconUtility" Content="IconsUtility" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
                 <Button x:Name="IconSizeAndColor" Content="Size and Color" Click="Icons_Color_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
-                
             </StackPanel>
             
         </StackPanel>

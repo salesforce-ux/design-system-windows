@@ -75,7 +75,7 @@
       <Link>Helpers\SLDSIconConstants.cs</Link>
       <DesignTime>True</DesignTime>
     </Compile>
-	<Compile Include="..\SalesforceDesignSystem\SLDSIconHelpers.cs">
+    <Compile Include="..\SalesforceDesignSystem\SLDSIconHelpers.cs">
       <Link>Helpers\SLDSIconHelpers.cs</Link>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -98,35 +98,35 @@
       <Link>Assets\Fonts\SalesforceDesignSystemIcons.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Bold.ttf">
+    <Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Bold.ttf">
       <Link>Assets\Fonts\SalesforceSans-Bold.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-BoldItalic.ttf">
+    <Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-BoldItalic.ttf">
       <Link>Assets\Fonts\SalesforceSans-BoldItalic.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Italic.ttf">
+    <Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Italic.ttf">
       <Link>Assets\Fonts\SalesforceSans-Italic.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Light.ttf">
+    <Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Light.ttf">
       <Link>Assets\Fonts\SalesforceSans-Light.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-LightItalic.ttf">
+    <Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-LightItalic.ttf">
       <Link>Assets\Fonts\SalesforceSans-LightItalic.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Regular.ttf">
+    <Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Regular.ttf">
       <Link>Assets\Fonts\SalesforceSans-Regular.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Thin.ttf">
+    <Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-Thin.ttf">
       <Link>Assets\Fonts\SalesforceSans-Thin.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-ThinItalic.ttf">
+    <Content Include="..\SalesforceDesignSystem\Fonts\SalesforceSans-ThinItalic.ttf">
       <Link>Assets\Fonts\SalesforceSans-ThinItalic.ttf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
