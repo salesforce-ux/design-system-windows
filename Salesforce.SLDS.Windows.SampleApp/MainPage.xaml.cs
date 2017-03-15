@@ -93,14 +93,7 @@ namespace Salesforce.SLDS.Windows.SampleApp
 
                 var code = (icon.GetValue(targetType) as string) ?? string.Empty;
 
-                //var iconBlock = SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(code, targetType, (Brush) Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush) Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], 100);
-
-                var iconBlock = new TextBlock()
-                {
-                    Text = code,
-                    FontFamily = new FontFamily("/Assets/Fonts/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons"),
-                    FontSize = 100
-                };
+                var iconBlock = SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(code, targetType, (Brush) Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush) Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], 100);
 
                 var descriptionBlock = new TextBlock()
                 {
@@ -180,7 +173,7 @@ namespace Salesforce.SLDS.Windows.SampleApp
                     var sampleTextBlock = new TextBlock()
                     {
                         Text = SampleText,
-                        FontFamily = new FontFamily($"/Assets/Fonts/Assets/Fonts/SalesforceSans-{fontsButton.Replace("_","")}.ttf#Salesforce Sans {fontsButton.Replace("_"," ")}"),
+                        FontFamily = new FontFamily($"/Assets/Fonts/SalesforceSans-{fontsButton.Replace("_","")}.ttf#Salesforce Sans {fontsButton.Replace("_"," ")}"),
                         FontSize = size
                     };
 

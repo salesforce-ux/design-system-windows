@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Shapes;
 using Salesforce.SfdcCore.Helpers;
 
 namespace Salesforce.SfdcCore.Helpers
@@ -23,7 +24,6 @@ namespace Salesforce.SfdcCore.Helpers
             {
                 Text = icon,
                 FontFamily = Font,
-                FontSize = size
             };
 
             return iconBlock;
@@ -42,22 +42,54 @@ namespace Salesforce.SfdcCore.Helpers
             return iconBlock;
         }
 
-        public static FrameworkElement GetIconTextBlock_WithColor_AndBgColor_AndSize(string icon, Brush color, Brush bgcolor, Double size)
+        public static FrameworkElement GetIconTextBlock_WithColor_AndBgColor_AndSize(string icon, Type iconType, Brush color, Brush bgcolor, Double size)
         {
+
+            var grid = new Grid()
+            {
+                Height = size,
+                Width = size,
+            };
+
             var iconBlock = new TextBlock()
             {
                 Text = icon,
                 FontFamily = Font,
                 Foreground = color,
-                FontSize = size
+                FontSize = size,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center
             };
 
-            var grid = new Grid()
+            if (iconType == typeof(SLDSIconConstants.SLDSIconAction))
             {
-                Height = iconBlock.Height,
-                Width = iconBlock.Width,
-                Background = bgcolor
-            };
+                var ellipse = new Ellipse()
+                {
+                    Height = size * 0.8,
+                    Width = size * 0.8,
+                    Fill = bgcolor,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center
+                };
+                grid.Children.Add(ellipse);
+            }
+            else if (iconType == typeof(SLDSIconConstants.SLDSIconUtility))
+            {
+                iconBlock.Foreground = bgcolor;
+            }
+            else
+            {
+                var border = new Border()
+                {
+                    Height = size * 0.9,
+                    Width = size * 0.9,
+                    Background = bgcolor,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    CornerRadius = new CornerRadius(10)
+                };
+                grid.Children.Add(border);
+            }
 
             grid.Children.Add(iconBlock);
 
