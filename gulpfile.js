@@ -32,8 +32,16 @@ const __PATHS__ = {
 };
 
 let data = {};
-
 let iconNames = [];
+
+let actionIconScale = 1.5
+let actionIconXOff = -15.0
+let actionIconYOff = -15.0
+
+let utilityIconScale = 1.5
+let utilityIconXOff = -2.0
+let utilityIconYOff = -5.0
+
 
 let types = [
   'color',
@@ -114,7 +122,7 @@ let icons = {};
 
 gulp.task('minify:svgs', () => {
   let index = 0.999
-  let streams = [];
+  let streams = []; 
 
   iconTypes.forEach(t => {
     streams.push(
@@ -122,10 +130,20 @@ gulp.task('minify:svgs', () => {
         .pipe(svgo())
         .pipe(xmlEdit((xml) => {
           if (t.name === 'action' || t.name === 'utility') {
+            let scale = t.name === 'action' ? actionIconScale : utilityIconScale;
+            let xOff = t.name === 'action' ? actionIconXOff : utilityIconXOff;
+            let yOff = t.name === 'action' ? actionIconYOff : utilityIconYOff
             xml.svg.$.height = 100;
-            xml.svg.$.weight = 100;
-            xml.svg.$.viewBox = '0 -24 100 100';
+            xml.svg.$.width  = 100;
+            xml.svg.$.viewBox = xOff + ' '+ yOff +' 100 100';
+            
+            if (xml.svg.path) {
+              xml.svg.path.forEach( path => {
+                path.$.transform = 'scale(' + scale + ')'
+              });               
+            }
           }
+
           if (xml.svg.g) {
             if(xml.svg.g[0].path) {
               xml.svg.g[0].path[0].$.d = xml.svg.g[0].path[0].$.d + ' M' + index + ' ' + index
