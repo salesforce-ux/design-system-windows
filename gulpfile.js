@@ -34,13 +34,13 @@ const __PATHS__ = {
 let data = {};
 let iconNames = [];
 
-let actionIconScale = 1.4
-let actionIconXOff = -15.0
-let actionIconYOff = -15.0
+let actionIconScale = 1.6
+let actionIconXOff = -8.0
+let actionIconYOff = -7.0
 
-let utilityIconScale = 1.4
-let utilityIconXOff = -13.0
-let utilityIconYOff = -13.0
+let utilityIconScale = 1.6
+let utilityIconXOff = -8.0
+let utilityIconYOff = -7.0
 
 
 let types = [
