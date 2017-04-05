@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Salesforce.SLDS.Windows/Styles/SLDS/SLDSTokens.ms.xaml" />
+        <ResourceDictionary Source="ms-appx:///Salesforce.SLDS.Windows/Styles/SLDS/SLDSBrushes.ms.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <FontFamily x:Key="SalesforceDesignSystemIcons">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons</FontFamily>
+    <FontFamily x:Key="SalesforceDefaultFontFamily">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceSans-Regular.ttf#Salesforce Sans</FontFamily>
+    <FontFamily x:Key="SalesforceSansBoldFontFamily">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceSans-Bold.ttf#Salesforce Sans Bold</FontFamily>
+    <FontFamily x:Key="SalesforceSansBoldItalicFontFamily">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceSans-BoldItalic.ttf#Salesforce Sans Bold Italic</FontFamily>
+    <FontFamily x:Key="SalesforceSansItalicFontFamily">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceSans-Italic.ttf#Salesforce Sans Italic</FontFamily>
+    <FontFamily x:Key="SalesforceLightFontFamily">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceSans-Light.ttf#Salesforce Sans Light</FontFamily>
+    <FontFamily x:Key="SalesforceSansLightItalicFontFamily">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceSans-LightItalic.ttf#Salesforce Sans Light Italic</FontFamily>
+    <FontFamily x:Key="SalesforceSansThinFontFamily">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceSans-Thin.ttf#Salesforce Sans Thin</FontFamily>
+    <FontFamily x:Key="SalesforceSansThinItalicFontFamily">ms-appx:///Salesforce.SLDS.Windows/Fonts/SalesforceSans-ThinItalic.ttf#Salesforce Sans Thin Italic</FontFamily>
+</ResourceDictionary>
