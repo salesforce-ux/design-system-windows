@@ -10,13 +10,12 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
-using Salesforce.SfdcCore.Helpers;
 
-namespace Salesforce.SfdcCore.Helpers
+namespace Salesforce.SLDS.Windows.Helpers
 {
     public static class SLDSIconHelpers
     {
-        private static FontFamily Font = new FontFamily("/Assets/Fonts/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons");
+        private static FontFamily Font = new FontFamily("/Fonts/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons");
 
         public static FrameworkElement GetIconTextBlock_WithSize(string icon, Double size)
         {

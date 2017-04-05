@@ -1,7 +1,7 @@
 /// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved 
 /// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
-namespace Salesforce.SfdcCore.Helpers
+namespace Salesforce.SLDS.Windows.Helpers
 {
     public class SLDSIconConstants
     {
@@ -369,8 +369,8 @@ namespace Salesforce.SfdcCore.Helpers
             public const string StandardForecasts = "\uEB56";
             public const string StandardGenericLoading = "\uEB57";
             public const string StandardGoals = "\uEB58";
-            public const string StandardGroupLoading = "\uEB59";
-            public const string StandardGroups = "\uEB5A";
+            public const string StandardGroups = "\uEB59";
+            public const string StandardGroupLoading = "\uEB5A";
             public const string StandardHierarchy = "\uEB5B";
             public const string StandardHome = "\uEB5C";
             public const string StandardHousehold = "\uEB5D";
@@ -556,8 +556,8 @@ namespace Salesforce.SfdcCore.Helpers
             public const string UtilityList = "\uEC0A";
             public const string UtilityLocation = "\uEC0B";
             public const string UtilityLock = "\uEC0C";
-            public const string UtilityLogACall = "\uEC0D";
-            public const string UtilityLogout = "\uEC0E";
+            public const string UtilityLogout = "\uEC0D";
+            public const string UtilityLogACall = "\uEC0E";
             public const string UtilityMagicwand = "\uEC0F";
             public const string UtilityMarkAllAsRead = "\uEC10";
             public const string UtilityMatrix = "\uEC11";
@@ -569,9 +569,9 @@ namespace Salesforce.SfdcCore.Helpers
             public const string UtilityMove = "\uEC17";
             public const string UtilityMuted = "\uEC18";
             public const string UtilityNew = "\uEC19";
-            public const string UtilityNewDirectMessage = "\uEC1A";
-            public const string UtilityNewWindow = "\uEC1B";
-            public const string UtilityNews = "\uEC1C";
+            public const string UtilityNews = "\uEC1A";
+            public const string UtilityNewDirectMessage = "\uEC1B";
+            public const string UtilityNewWindow = "\uEC1C";
             public const string UtilityNote = "\uEC1D";
             public const string UtilityNotebook = "\uEC1E";
             public const string UtilityNotification = "\uEC1F";
@@ -579,8 +579,8 @@ namespace Salesforce.SfdcCore.Helpers
             public const string UtilityOffline = "\uEC21";
             public const string UtilityOfflineCached = "\uEC22";
             public const string UtilityOpen = "\uEC23";
-            public const string UtilityOpenFolder = "\uEC24";
-            public const string UtilityOpenedFolder = "\uEC25";
+            public const string UtilityOpenedFolder = "\uEC24";
+            public const string UtilityOpenFolder = "\uEC25";
             public const string UtilityOverflow = "\uEC26";
             public const string UtilityPackage = "\uEC27";
             public const string UtilityPackageOrg = "\uEC28";

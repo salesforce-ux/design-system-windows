@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using Salesforce.SfdcCore.Helpers;
+using Salesforce.SLDS.Windows.Helpers;
 
 namespace Salesforce.SLDS.Windows.SampleApp
 {
