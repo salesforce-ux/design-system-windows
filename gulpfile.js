@@ -34,13 +34,21 @@ const __PATHS__ = {
 let data = {};
 let iconNames = [];
 
-let actionIconScale = 1.6
-let actionIconXOff = -8.0
-let actionIconYOff = -7.0
+let actionIconScale = 2.0
+let actionIconXOff = -10.0
+let actionIconYOff = -8.75
 
-let utilityIconScale = 1.6
-let utilityIconXOff = -8.0
-let utilityIconYOff = -7.0
+let customIconScale = 1.25
+let customIconXOff = -3.0
+let customIconYOff = -2.75
+
+let standardIconScale = 1.25
+let standardIconXOff = -3.0
+let standardIconYOff = -2.75
+
+let utilityIconScale = 2.0
+let utilityIconXOff = -10.0
+let utilityIconYOff = -8.75
 
 
 let types = [
@@ -129,20 +137,45 @@ gulp.task('minify:svgs', () => {
       gulp.src(__PATHS__.icons +  '/' + t.name + '/*.svg')
         .pipe(svgo())
         .pipe(xmlEdit((xml) => {
-          if (t.name === 'action' || t.name === 'utility') {
-            let scale = t.name === 'action' ? actionIconScale : utilityIconScale;
-            let xOff = t.name === 'action' ? actionIconXOff : utilityIconXOff;
-            let yOff = t.name === 'action' ? actionIconYOff : utilityIconYOff
-            xml.svg.$.height = 100;
-            xml.svg.$.width  = 100;
-            xml.svg.$.viewBox = xOff + ' '+ yOff +' 100 100';
-            
-            if (xml.svg.path) {
-              xml.svg.path.forEach( path => {
-                path.$.transform = 'scale(' + scale + ')'
-              });               
-            }
-          }
+		    let scale = 1.0
+            let xOff = 0.0
+            let yOff = 0.0
+			
+			switch(t.name)
+			{
+				  case 'action':
+					scale = actionIconScale;
+					xOff = actionIconXOff;
+					yOff = actionIconYOff;
+					break;
+				  case 'utility':
+					scale = utilityIconScale;
+					xOff = utilityIconXOff;
+					yOff = utilityIconYOff;
+					break;
+				  case 'custom':
+					scale = customIconScale;
+					xOff = customIconXOff;
+					yOff = customIconYOff;
+					break;
+				  case 'standard':
+				  default:
+					scale = standardIconScale;
+					xOff = standardIconXOff;
+					yOff = standardIconYOff;
+					break;
+			}
+
+			xml.svg.$.height = 100;
+			xml.svg.$.width  = 100;
+			xml.svg.$.viewBox = xOff + ' '+ yOff +' 100 100';
+			
+			if (xml.svg.path) {
+			  xml.svg.path.forEach( path => {
+				path.$.transform = 'scale(' + scale + ')'
+			  });               
+			}
+          
 
           if (xml.svg.g) {
             if(xml.svg.g[0].path) {

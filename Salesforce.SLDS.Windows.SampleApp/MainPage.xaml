@@ -35,7 +35,7 @@
                 <Button x:Name="SLDSIconUtility" Content="IconsUtility" Click="Icons_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
                 <Button x:Name="IconSizeAndColor" Content="Size and Color" Click="Icons_Color_OnClick" Margin="{StaticResource ButtonBorderThemeThickness}"/>
             </StackPanel>
-            
+            <Button x:Name="Sizing" Content="Sizing" Click="Sizing_OnClick"  Margin="{StaticResource ButtonBorderThemeThickness}"/>
         </StackPanel>
 
         <ListView Name="DisplayList" Grid.Column="1"/>
