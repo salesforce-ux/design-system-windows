@@ -2,7 +2,8 @@
 <!-- Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license -->
 
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:Class="SalesforceDesignSystem.SLDSBrushes">
 <!-- Fill -->
 	 <SolidColorBrush x:Key="SLDS_FILL_BRAND_BRUSH" Color="{StaticResource SLDS_FILL_BRAND}" />
 	 <SolidColorBrush x:Key="SLDS_FILL_BRAND_HOVER_BRUSH" Color="{StaticResource SLDS_FILL_BRAND_HOVER}" />
