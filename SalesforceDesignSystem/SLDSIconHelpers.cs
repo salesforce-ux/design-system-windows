@@ -16,7 +16,7 @@ namespace Salesforce.SfdcCore.Helpers
 {
     public static class SLDSIconHelpers
     {
-        private static FontFamily Font = new FontFamily("/Assets/Fonts/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons");
+        private static readonly FontFamily Font = (FontFamily)Application.Current.Resources["SalesforceDesignSystemIcons"];
 
         public static FrameworkElement GetIconTextBlock_WithSize(string icon, Double size)
         {

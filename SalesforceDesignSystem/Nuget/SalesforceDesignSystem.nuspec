@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SalesforceDesignSystem</id>
+    <version>1.0.0</version>
+    <authors>salesforce.com</authors>
+    <owners>salesforce.com</owners>
+    <iconUrl>https://c2.sfdcstatic.com/content/dam/web/en_us/www/images/nav/salesforce-logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Salesforce Styling for UWP Apps</description>
+    <releaseNotes>Initial commit</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+  </metadata>
+</package>
