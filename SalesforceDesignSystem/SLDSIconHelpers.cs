@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
 using Salesforce.SfdcCore.Helpers;
 
-namespace Salesforce.SfdcCore.Helpers
+namespace Salesforce.DesignSystem
 {
     public static class SLDSIconHelpers
     {

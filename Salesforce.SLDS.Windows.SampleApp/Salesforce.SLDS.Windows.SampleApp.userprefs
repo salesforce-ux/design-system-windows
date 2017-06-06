@@ -3,7 +3,7 @@
     <Files>
       <File FileName="MainPage.xaml.cs" Line="91" Column="57" />
       <File FileName="project.json" Line="1" Column="1" />
-      <File FileName="Package.appxmanifest" Line="26" Column="14" />
+      <File FileName="Package.appxmanifest" Line="49" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x64" />
