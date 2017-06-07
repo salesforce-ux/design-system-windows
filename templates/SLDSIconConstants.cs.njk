@@ -3,13 +3,13 @@
 
 namespace Salesforce.DesignSystem
 {
-    public class SLDSIconConstants
+    public class IconConstants
     {
         {% for type, iconSet in icons %}
         /// <summary>
         /// List of {{type | capitalize}} icons in SalesforceDesignSystemIcons.ttf
         /// </summary>
-        public class SLDSIcon{{type | capitalize}}
+        public class Icon{{type | capitalize}}
         { {% for icon in iconSet %}
             public const string {{icon.name}} = "\u{{icon.unicode}}";{% endfor %}
         } 

@@ -3,13 +3,13 @@
 
 namespace Salesforce.DesignSystem
 {
-    public class SLDSIconConstants
+    public class IconConstants
     {
         
         /// <summary>
         /// List of Action icons in SalesforceDesignSystemIcons.ttf
         /// </summary>
-        public class SLDSIconAction
+        public class IconAction
         { 
             public const string ActionAddContact = "\uEA01";
             public const string ActionAddRelationship = "\uEA02";
@@ -195,7 +195,7 @@ namespace Salesforce.DesignSystem
         /// <summary>
         /// List of Custom icons in SalesforceDesignSystemIcons.ttf
         /// </summary>
-        public class SLDSIconCustom
+        public class IconCustom
         { 
             public const string Custom1 = "\uEAB4";
             public const string Custom10 = "\uEAB5";
@@ -315,7 +315,7 @@ namespace Salesforce.DesignSystem
         /// <summary>
         /// List of Standard icons in SalesforceDesignSystemIcons.ttf
         /// </summary>
-        public class SLDSIconStandard
+        public class IconStandard
         { 
             public const string StandardAccount = "\uEB25";
             public const string StandardAddress = "\uEB26";
@@ -449,7 +449,7 @@ namespace Salesforce.DesignSystem
         /// <summary>
         /// List of Utility icons in SalesforceDesignSystemIcons.ttf
         /// </summary>
-        public class SLDSIconUtility
+        public class IconUtility
         { 
             public const string UtilityAdd = "\uEBA4";
             public const string UtilityAdduser = "\uEBA5";

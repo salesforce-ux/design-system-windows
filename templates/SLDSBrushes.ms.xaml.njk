@@ -3,7 +3,7 @@
 
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    x:Class="SalesforceDesignSystem.SLDSBrushes">
+                    x:Class="Salesforce.DesignSystem.Brushes">
 {% for categoryName, category in data.Color %}<!-- {{categoryName}} -->
 	{% for color in category %} <SolidColorBrush x:Key="SLDS_{{color.name}}_BRUSH" Color="{StaticResource SLDS_{{color.name}}}" />
 	{% endfor %}

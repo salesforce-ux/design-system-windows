@@ -14,7 +14,7 @@ using Salesforce.SfdcCore.Helpers;
 
 namespace Salesforce.DesignSystem
 {
-    public static class SLDSIconHelpers
+    public static class IconHelpers
     {
         private static readonly FontFamily Font = (FontFamily)Application.Current.Resources["SalesforceDesignSystemIcons"];
 

@@ -3,9 +3,9 @@
 
 namespace Salesforce.DesignSystem
 {
-    public partial class SLDSTokens
+    public partial class Tokens
     {
-        public SLDSTokens()
+        public Tokens()
         {
             InitializeComponent();
         }

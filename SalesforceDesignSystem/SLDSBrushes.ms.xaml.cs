@@ -3,9 +3,9 @@
 
 namespace Salesforce.DesignSystem
 {
-    public partial class SLDSBrushes
+    public partial class Brushes
     {
-        public SLDSBrushes()
+        public Brushes()
         {
             InitializeComponent();
         }
