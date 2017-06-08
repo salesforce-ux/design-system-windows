@@ -47,6 +47,9 @@
     </Compile>
     <Compile Include="Generated\IconConstants.cs" />
     <Compile Include="IconHelpers.cs" />
+    <Compile Include="MergedResources.xaml.cs">
+      <DependentUpon>MergedResources.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tokens.ms.xaml.cs" />
     <EmbeddedResource Include="Properties\SalesforceDesignSystem.rd.xml" />
@@ -68,6 +71,10 @@
     <Page Include="Generated\Tokens.ms.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MergedResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
