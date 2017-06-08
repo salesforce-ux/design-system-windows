@@ -41,14 +41,14 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Brushes.ms.xaml.cs" />
     <Compile Include="Fonts\SLDSFonts.xaml.cs">
       <DependentUpon>SLDSFonts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Generated\SLDSIconConstants.cs" />
+    <Compile Include="Generated\IconConstants.cs" />
+    <Compile Include="IconHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SLDSBrushes.ms.xaml.cs" />
-    <Compile Include="SLDSIconHelpers.cs" />
-    <Compile Include="SLDSTokens.ms.xaml.cs" />
+    <Compile Include="Tokens.ms.xaml.cs" />
     <EmbeddedResource Include="Properties\SalesforceDesignSystem.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -61,11 +61,11 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="Generated\SLDSBrushes.ms.xaml">
+    <Page Include="Generated\Brushes.ms.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Generated\SLDSTokens.ms.xaml">
+    <Page Include="Generated\Tokens.ms.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
