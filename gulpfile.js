@@ -258,28 +258,28 @@ gulp.task('template:design-tokens', () => {
   let streams = [];
 
   streams.push(
-    gulp.src('templates/SLDSBrushes.ms.xaml.njk')
+    gulp.src('templates/Brushes.ms.xaml.njk')
       .pipe(nunjucks.compile({ 
         'data': data,
         'icons': icons,
         'iconTypes':iconTypes
       }))
-      .pipe(rename('SLDSBrushes.ms.xaml'))
+      .pipe(rename('Brushes.ms.xaml'))
   );
 
   streams.push(
-    gulp.src('templates/SLDSTokens.ms.xaml.njk')
+    gulp.src('templates/Tokens.ms.xaml.njk')
       .pipe(nunjucks.compile({ 'data': data }))
-      .pipe(rename('SLDSTokens.ms.xaml'))
+      .pipe(rename('Tokens.ms.xaml'))
   );
 
   streams.push(
-    gulp.src('templates/SLDSIconConstants.cs.njk')
+    gulp.src('templates/IconConstants.cs.njk')
     .pipe(nunjucks.compile({ 
         'icons': icons,
         'iconTypes':iconTypes
         }))
-    .pipe(rename('SLDSIconConstants.cs'))
+    .pipe(rename('IconConstants.cs'))
   );
 
   return merge2(streams).pipe(gulp.dest(__PATHS__.output))
