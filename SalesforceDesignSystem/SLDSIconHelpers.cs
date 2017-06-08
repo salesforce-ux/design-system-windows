@@ -2,15 +2,10 @@
 /// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
-using Salesforce.SfdcCore.Helpers;
 
 namespace Salesforce.DesignSystem
 {
@@ -61,7 +56,7 @@ namespace Salesforce.DesignSystem
                 VerticalAlignment = VerticalAlignment.Center
             };
 
-            if (iconType == typeof(SLDSIconConstants.SLDSIconAction))
+            if (iconType == typeof(IconConstants.IconAction))
             {
                 var ellipse = new Ellipse()
                 {
@@ -73,7 +68,7 @@ namespace Salesforce.DesignSystem
                 };
                 grid.Children.Add(ellipse);
             }
-            else if (iconType == typeof(SLDSIconConstants.SLDSIconUtility))
+            else if (iconType == typeof(IconConstants.IconUtility))
             {
                 iconBlock.Foreground = bgcolor;
             }
