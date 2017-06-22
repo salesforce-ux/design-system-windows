@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using Salesforce.SfdcCore.Helpers;
+using Salesforce.DesignSystem;
 
 namespace Salesforce.SLDS.Windows.SampleApp
 {
@@ -29,7 +29,7 @@ namespace Salesforce.SLDS.Windows.SampleApp
 
             var brushes =
                 Application.Current.Resources.MergedDictionaries.Where(
-                    (x) => x.Source.ToString().Contains("SLDSBrushes.ms.xaml")).ToArray()[0];
+                    (x) => x.Source.ToString().Contains("Brushes.ms.xaml")).ToArray()[0];
 
             foreach (var brush in brushes)
             {
@@ -52,7 +52,7 @@ namespace Salesforce.SLDS.Windows.SampleApp
 
             var tokenDictionary =
                  Application.Current.Resources.MergedDictionaries.Where(
-                    (x) => x.Source.ToString().Contains("SLDSTokens.ms.xaml")).ToArray()[0];
+                    (x) => x.Source.ToString().Contains("Tokens.ms.xaml")).ToArray()[0];
 
            throw new NotImplementedException();
         }
@@ -65,17 +65,17 @@ namespace Salesforce.SLDS.Windows.SampleApp
 
             switch (iconsButton)
             {
-                case "SLDSIconAction":
-                    targetType = typeof(SLDSIconConstants.SLDSIconAction);
+                case "IconAction":
+                    targetType = typeof(IconConstants.IconAction);
                     break;
-                case "SLDSIconCustom":
-                    targetType = typeof(SLDSIconConstants.SLDSIconCustom);
+                case "IconCustom":
+                    targetType = typeof(IconConstants.IconCustom);
                     break;
-                case "SLDSIconStandard":
-                    targetType = typeof(SLDSIconConstants.SLDSIconStandard);
+                case "IconStandard":
+                    targetType = typeof(IconConstants.IconStandard);
                     break;
-                case "SLDSIconUtility":
-                    targetType = typeof(SLDSIconConstants.SLDSIconUtility);
+                case "IconUtility":
+                    targetType = typeof(IconConstants.IconUtility);
                     break;
                 case "Icons":
                 default:
@@ -93,7 +93,7 @@ namespace Salesforce.SLDS.Windows.SampleApp
 
                 var code = (icon.GetValue(targetType) as string) ?? string.Empty;
 
-                var iconBlock = SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(code, targetType, (Brush) Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush) Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]);
+                var iconBlock = IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(code, targetType, (Brush) Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush) Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]);
 
                 var descriptionBlock = new TextBlock()
                 {
@@ -134,8 +134,8 @@ namespace Salesforce.SLDS.Windows.SampleApp
                 foreach (var fontSize in fontSizes)
                 {
                     var realFontResource = (Double)Application.Current.Resources[fontSize.Key];
-                    panel.Children.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndSize(
-                        SLDSIconConstants.SLDSIconAction.ActionAddContact, colorBrush, realFontResource));
+                    panel.Children.Add(IconHelpers.GetIconTextBlock_WithColor_AndSize(
+                        IconConstants.IconAction.ActionAddContact, colorBrush, realFontResource));
                 }
 
                 DisplayList.Items.Add(panel);
@@ -194,16 +194,16 @@ namespace Salesforce.SLDS.Windows.SampleApp
             DisplayList.Items.Clear();
 
 
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityRows, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityRows, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityUser, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityBookmark, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityCompany, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityOpen, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityRefresh, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilitySettings, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityLike, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_MEDIUM"]));
-            DisplayList.Items.Add(SLDSIconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(SLDSIconConstants.SLDSIconUtility.UtilityComments, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_MEDIUM"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityRows, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityRows, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityUser, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityBookmark, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityCompany, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityOpen, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityRefresh, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilitySettings, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_LARGE"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityLike, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_MEDIUM"]));
+            DisplayList.Items.Add(IconHelpers.GetIconTextBlock_WithColor_AndBgColor_AndSize(IconConstants.IconUtility.UtilityComments, null, (Brush)Application.Current.Resources["SLDS_COLOR_TEXT_INVERSE_BRUSH"], (Brush)Application.Current.Resources["SLDS_COLOR_BACKGROUND_TOGGLE_ACTIVE_HOVER_BRUSH"], (Double)Application.Current.Resources["SLDS_FONT_SIZE_MEDIUM"]));
 
         }
     }
