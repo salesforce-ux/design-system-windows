@@ -1,12 +1,15 @@
-<?xml version="1.0"?>
-<package >
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>SalesforceDesignSystem</id>
-    <version>1.0.2</version>
+    <version>3.0.1</version>
+    <title>Lightning Design System tokens, icons and fonts for Windows</title>
     <authors>salesforce.com</authors>
     <owners>salesforce.com</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Salesforce Styling for UWP Apps</description>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/salesforce-ux/licenses/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/salesforce-ux/design-system-windows</projectUrl>
+    <description>Salesforce Styling Library for UWP Apps</description>
     <releaseNotes>Initial commit</releaseNotes>
     <copyright>Copyright 2017</copyright>
   </metadata>
