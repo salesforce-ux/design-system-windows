@@ -1,8 +1,8 @@
 ﻿namespace SalesforceDesignSystem
 {
-    public partial class SLDSFonts
+    public partial class Fonts
     {
-        public SLDSFonts()
+        public Fonts()
         {
             this.InitializeComponent();
         }
