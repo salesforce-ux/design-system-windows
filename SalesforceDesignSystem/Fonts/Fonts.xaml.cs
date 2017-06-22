@@ -1,4 +1,4 @@
-﻿namespace SalesforceDesignSystem
+﻿namespace Salesforce.DesignSystem
 {
     public partial class Fonts
     {

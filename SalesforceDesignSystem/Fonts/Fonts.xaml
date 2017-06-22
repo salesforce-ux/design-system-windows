@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    x:Class="SalesforceDesignSystem.Fonts">
+                    x:Class="Salesforce.DesignSystem.Fonts">
 
     <FontFamily x:Key="SalesforceDesignSystemIcons">ms-appx:///SalesforceDesignSystem/Generated/SalesforceDesignSystemIcons.ttf#SalesforceDesignSystemIcons</FontFamily>
     <FontFamily x:Key="SalesforceDefaultFontFamily">ms-appx:///SalesforceDesignSystem/Fonts/SalesforceSans-Regular.ttf#Salesforce Sans</FontFamily>
