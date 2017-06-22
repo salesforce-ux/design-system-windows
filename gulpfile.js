@@ -282,6 +282,16 @@ gulp.task('template:design-tokens', () => {
     .pipe(rename('IconConstants.cs'))
   );
 
+  streams.push(
+    gulp.src('templates/Brushes.ms.xaml.cs.njk')
+    .pipe(rename('Brushes.ms.xaml.cs'))
+  );
+
+  streams.push(
+    gulp.src('templates/Tokens.ms.xaml.cs.njk')
+    .pipe(rename('Tokens.ms.xaml.cs'))
+  );
+
   return merge2(streams).pipe(gulp.dest(__PATHS__.output))
 });
 
