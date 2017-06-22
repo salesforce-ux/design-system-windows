@@ -19,7 +19,7 @@ bld/
 [Ll]og/
 
 SalesforceDesignSystem/Nuget/lib
-SalesforceDesignSystem/*.nupkg
+SalesforceDesignSystem/Nuget/*.nupkg
 
 *.suo
 *csproj.user

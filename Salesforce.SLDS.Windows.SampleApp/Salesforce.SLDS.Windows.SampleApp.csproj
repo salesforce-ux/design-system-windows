@@ -71,14 +71,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SalesforceDesignSystem\Generated\SLDSIconConstants.cs">
-      <Link>Helpers\SLDSIconConstants.cs</Link>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="..\SalesforceDesignSystem\SLDSIconHelpers.cs">
-      <Link>Helpers\SLDSIconHelpers.cs</Link>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -148,18 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\SalesforceDesignSystem\Generated\SLDSBrushes.ms.xaml">
-      <Link>Styles\SLDS\SLDSBrushes.ms.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\SalesforceDesignSystem\Generated\SLDSTokens.ms.xaml">
-      <Link>Styles\SLDS\SLDSTokens.ms.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
