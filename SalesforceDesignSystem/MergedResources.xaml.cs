@@ -1,6 +1,4 @@
-﻿using Windows.UI.Xaml.Controls;
-
-namespace SalesforceDesignSystem
+﻿namespace Salesforce.DesignSystem
 {
     public sealed partial class MergedResources
     {

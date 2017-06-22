@@ -41,17 +41,21 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Brushes.ms.xaml.cs" />
-    <Compile Include="Fonts\SLDSFonts.xaml.cs">
-      <DependentUpon>SLDSFonts.xaml</DependentUpon>
+    <Compile Include="Fonts\Fonts.xaml.cs">
+      <DependentUpon>Fonts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Brushes.ms.xaml.cs">
+      <DependentUpon>Brushes.ms.xaml</DependentUpon>
     </Compile>
     <Compile Include="Generated\IconConstants.cs" />
+    <Compile Include="Generated\Tokens.ms.xaml.cs">
+      <DependentUpon>Tokens.ms.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IconHelpers.cs" />
     <Compile Include="MergedResources.xaml.cs">
       <DependentUpon>MergedResources.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tokens.ms.xaml.cs" />
     <EmbeddedResource Include="Properties\SalesforceDesignSystem.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -59,10 +63,9 @@
     <Content Include="Fonts\License-for-SalesforceSans-font.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Fonts\SLDSFonts.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Fonts\Fonts.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Generated\Brushes.ms.xaml">
       <Generator>MSBuild:Compile</Generator>
