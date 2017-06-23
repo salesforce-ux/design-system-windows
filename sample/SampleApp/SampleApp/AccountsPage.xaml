@@ -1,0 +1,139 @@
+﻿<Page
+    x:Class="SampleApp.AccountsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SampleApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:styles="using:SampleApp.Styles"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <styles:SharedStyles />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource SLDS_COLOR_BACKGROUND_BRUSH}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid BorderThickness="0,0,0,1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid Background="{StaticResource SLDS_STANDARD_ACCOUNT_ICON_BACKGROUND_BRUSH}"
+                  Height="{StaticResource SLDS_SQUARE_ICON_MEDIUM}"
+                  Width="{StaticResource SLDS_SQUARE_ICON_MEDIUM}"
+                  Margin="{StaticResource SLDS_SPACING_SMALL_THICKNESS_ALL}"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch" Padding="0">
+                <TextBlock Text="{x:Bind AccountsIcon}" 
+                           Style="{StaticResource SalesforceIcon}"/>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="My Accounts" VerticalAlignment="Center" />
+                <TextBlock Grid.Row="1"
+                           Foreground="{StaticResource SLDS_COLOR_TEXT_WEAK_BRUSH}"
+                           Text="5 items, sorted by Account Name" />
+            </Grid>
+            
+        </Grid>
+        <Grid Grid.Row="1"
+              Background="{StaticResource SLDS_COLOR_BACKGROUND_ALT_BRUSH}">
+            <ListView x:Name="AccountsListView">
+               
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Account">
+                        <StackPanel HorizontalAlignment="Stretch"
+                                    Margin="{StaticResource SLDS_CARD_SPACING_MEDIUM_THICKNESS_ALL}">
+                            <TextBlock Text="{x:Bind Name}"/>
+                            <Grid HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Billing State:"
+                                           Foreground="{StaticResource SLDS_COLOR_TEXT_WEAK_BRUSH}" />
+                                <TextBlock Grid.Column="1" Text="{x:Bind BillingState}" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Phone:"
+                                           Foreground="{StaticResource SLDS_COLOR_TEXT_WEAK_BRUSH}"/>
+                                <TextBlock Grid.Column="1" Text="{x:Bind Phone}" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Type:"
+                                           Foreground="{StaticResource SLDS_COLOR_TEXT_WEAK_BRUSH}"/>
+                                <TextBlock Grid.Column="1" Text="{x:Bind Type}" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Owner:"
+                                           Foreground="{StaticResource SLDS_COLOR_TEXT_WEAK_BRUSH}"/>
+                                <TextBlock Grid.Column="1" Text="{x:Bind Owner}" />
+                            </Grid>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Grid.Row="2"
+              HorizontalAlignment="Stretch"
+              BorderThickness="0,1,0,0"
+              Background="{StaticResource SLDS_COLOR_BACKGROUND_ALT_BRUSH}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+           
+            <Grid >
+                <Grid Background="{StaticResource SLDS_ACTION_FILTER_ICON_BACKGROUND_BRUSH}" Style="{StaticResource RoundIconContainer}">
+                    <TextBlock Text="{x:Bind FilterIcon}"
+                               Style="{StaticResource SalesforceIcon}" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid Background="{StaticResource SLDS_ACTION_SORT_ICON_BACKGROUND_BRUSH}"
+                      Style="{StaticResource RoundIconContainer}">
+                    <TextBlock Text="{x:Bind SortIcon}"
+                               Style="{StaticResource SalesforceIcon}" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid Background="{StaticResource SLDS_ACTION_ADD_RELATIONSHIP_ICON_BACKGROUND_BRUSH}"
+                      Style="{StaticResource RoundIconContainer}">
+                    <TextBlock Text="{x:Bind NewIcon}"
+                               Style="{StaticResource SalesforceIcon}" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

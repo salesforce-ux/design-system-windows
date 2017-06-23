@@ -51,7 +51,6 @@
     <Compile Include="Generated\Tokens.ms.xaml.cs">
       <DependentUpon>Tokens.ms.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IconHelpers.cs" />
     <Compile Include="MergedResources.xaml.cs">
       <DependentUpon>MergedResources.xaml</DependentUpon>
     </Compile>
