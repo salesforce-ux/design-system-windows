@@ -8,6 +8,8 @@ Current release: Spring ’17
 
 Available on Nuget: https://www.nuget.org/packages/SalesforceDesignSystem/
 
+https://buildstats.info/nuget/SalesforceDesignSystem
+
 Install-Package SalesforceDesignSystem
 
 Add SLDS library to App.xaml:
