@@ -6,26 +6,44 @@ Current release: Spring ’17
 
 ## Simple Install
 
+Nuget: Install-Package SalesforceDesignSystem
+
+Add SLDS library to App.xaml:
+
+```
+<Application.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <designSystem:Tokens />
+            <designSystem:Brushes />
+            <designSystem:Fonts />
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+</Application.Resources>
+```
 
 ## Sample Application 
 
-See [Demo App](https://github.com/salesforce-ux/design-system-windows/tree/master/Salesforce.SLDS.Windows.SampleApp)
+See [Demo App](https://github.com/salesforce-ux/design-system-windows/tree/master/sample/SampleApp)
 
 ### Examples
-
 
 #### Colors
 
 ```
-Example
-
+<Grid Background="{StaticResource SLDS_COLOR_BACKGROUND_BRUSH}"/>
 ```
 
 
 #### Fonts and text sizes
 
 ```
-Example
+ <Style x:Key="DefaultTextStyle" TargetType="TextBlock">
+    <Setter Property="FontFamily"
+            Value="{StaticResource SalesforceDefaultFontFamily}" />
+    <Setter Property="Foreground"
+            Value="{ThemeResource SLDS_COLOR_TEXT_DEFAULT_BRUSH}" />
+ </Style>
 
 ```
 
@@ -35,7 +53,11 @@ Example
 ##### Action Icons
 
 ```
-Example
+var tb = new TextBlock()
+{
+    FontFamily = (FontFamily) Application.Current.Resources["SalesforceDesignSystemIcons"],
+    Text = IconConstants.IconAction.ActionAddContact
+};
 
 ```
 
@@ -43,7 +65,11 @@ Example
 ##### Custom Icons
 
 ```
-Example
+var tb = new TextBlock()
+{
+    FontFamily = (FontFamily) Application.Current.Resources["SalesforceDesignSystemIcons"],
+    Text =  IconConstants.IconCustom.Custom1
+};
 
 ```
 
@@ -51,7 +77,11 @@ Example
 ##### Standard Icons
 
 ```
-Example
+var tb = new TextBlock()
+{
+    FontFamily = (FontFamily) Application.Current.Resources["SalesforceDesignSystemIcons"],
+    Text = IconConstants.IconStandard.StandardAccount
+};
 
 ```
 
@@ -60,7 +90,11 @@ Example
 
 
 ```
-Example
+var tb = new TextBlock()
+{
+    FontFamily = (FontFamily) Application.Current.Resources["SalesforceDesignSystemIcons"],
+    Text = IconConstants.IconUtility.UtilitySort
+};
 
 ```
 
