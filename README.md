@@ -30,6 +30,8 @@ Add SLDS library to App.xaml:
 
 See [Demo App](https://github.com/salesforce-ux/design-system-windows/tree/master/sample/SampleApp)
 
+![alt text](https://github.com/salesforce-ux/design-system-windows/blob/master/sample/screenshot.png)
+
 ### Examples
 
 #### Colors
